@@ -64,18 +64,39 @@
     }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr; /* stack cards in one column */
+      gap: 2rem;                  /* vertical space between cards */
     }
+
     .project-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
       border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 1rem;
+      border-radius: 10px;
+      padding: 1.25rem;
+      background-color: #fff;
       transition: box-shadow 0.2s;
     }
+
+
     .project-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     }
+
+    .project-card .project-text {
+      flex: 1;                 /* text takes remaining space */
+    }
+
+    .project-card img.project-img {
+      width: 180px;            /* smaller photo */
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -94,19 +115,93 @@
     </nav>
   </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Project A</h3>
-        <p>A brief description of Project A, what tech you used and what you learned.</p>
-        <p><a href="projects/project-a.html">View →</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Project B</h3>
-        <p>A brief description. Maybe show a screenshot or link to GitHub.</p>
-        <p><a href="projects/project-b.html">View →</a></p>
-      </div>
+  <section id="Games">
+    <h2>Games and Applications</h2>
+  <div class="project-card">
+  <a href="https://slayervictor.itch.io/refight" target="_blank" class="project-card">
+  <div class="project-text">
+    <h3>Refight (2025 GMTK Game Jam)</h3>
+    <p>A game for the GMTK 2025 Game Jam, where I had to make a game with the theme Loop in 4 days. This is a arena game where you get a echo every wave, that loops through your actions from the previous loop.</p>
+    <p>View →</p>
+  </div>
+  <img src="images/Refight.png" alt="Screenshot of Project A" class="project-img">
+</a>
+</div>
+
+<div class="project-card">
+  <a href="https://slayervictor.itch.io/corrupted-depths" target="_blank" class="project-card">
+  <div class="project-text">
+    <h3>Corrupted Depths (2024 Acerola Jam 0)</h3>
+    <p>A game made for the Acerola Jam 0 in 2024. The theme was aberation, so I decided to make a fishing game where corrupted fish come from another world, and you have to fish them up to rid the waters of this threat.</p>
+    <p>View →</p>
+  </div>
+  <img src="images/corrupted_depths.png" alt="Screenshot of Project A" class="project-img">
+</a>
+</div>
+
+<div class="project-card">
+  <a href="https://slayervictor.itch.io/speed-gunner-prototype" target="_blank" class="project-card">
+  <div class="project-text">
+    <h3>Speed Gunner (2021 Blackthorn Prod Game Jam #3)</h3>
+    <p>This game was made for the Blackthorn Prod Game Jam #3 in 2021 with the theme "Less is More". This is a bullet hell game, where the less time you spent in the dungeon, the more points you get. But you have to balance it out, since you have to get materials from the enemies to get points.</p>
+    <p>View →</p>
+  </div>
+  <img src="images/Speedgunner.png" alt="Screenshot of Project A" class="project-img">
+</a>
+</div>
+
+<div class="project-card">
+  <a href="https://slayervictor.itch.io/waifu" target="_blank" class="project-card">
+  <div class="project-text">
+    <h3>wAIfu</h3>
+    <p>This program was made as a joke back when my major was Artificial Intelligence. The program surprisingly gained over 1,700 downloads. Essentially you rate anime girls and the AI learns your preferences, and can rate anime girls for you, and you can see if you agree with the AI.</p>
+    <p>View →</p>
+  </div>
+  <img src="images/wAIfu.png" alt="Screenshot of Project A" class="project-img">
+</a>
+</div>
+
+<section id="Roblox">
+    <h2>Roblox Games</h2>
+  <div class="project-card">
+  <div class="project-text">
+    <h3>Project A</h3>
+    <p>A brief description of Project A, what tech you used and what you learned.</p>
+    <p><a href="projects/project-a.html">View →</a></p>
+  </div>
+  <img src="images/l.png" alt="Screenshot of Project A" class="project-img">
+</div>
+
+<div class="project-card">
+  <div class="project-text">
+    <h3>Project B</h3>
+    <p>A brief description. Maybe show a screenshot or link to GitHub.</p>
+    <p><a href="projects/project-b.html">View →</a></p>
+  </div>
+  <img src="images/project-b.png" alt="Screenshot of Project B" class="project-img">
+</div>
+
+<section id="School Projects">
+    <h2>School Projects</h2>
+  <div class="project-card">
+  <div class="project-text">
+    <h3>Project A</h3>
+    <p>A brief description of Project A, what tech you used and what you learned.</p>
+    <p><a href="projects/project-a.html">View →</a></p>
+  </div>
+  <img src="images/l.png" alt="Screenshot of Project A" class="project-img">
+</div>
+
+<div class="project-card">
+  <div class="project-text">
+    <h3>Project B</h3>
+    <p>A brief description. Maybe show a screenshot or link to GitHub.</p>
+    <p><a href="projects/project-b.html">View →</a></p>
+  </div>
+  <img src="images/project-b.png" alt="Screenshot of Project B" class="project-img">
+</div>
+
+
       <!-- add more project cards -->
     </div>
   </section>
