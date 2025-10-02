@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>slayervictor | Blog Posts</title>
+  <link rel="stylesheet" href="themes/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="blogposts.html"class="active">Blog Posts</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Blog Posts</h2>
+    <div class="projects-grid" id="articles"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 slayervictor.</p>
+  </footer>
+
+  <script>
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@victor-reynolds')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('articles');
+        data.items.forEach(item => {
+          // Extract first image from content
+          let imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+          let imgSrc = imgMatch ? imgMatch[1] : "https://via.placeholder.com/180x120.png?text=Medium+Post";
+
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <div class="project-text">
+              <h3>${item.title}</h3>
+              <p>${item.description.replace(/<[^>]+>/g, '').slice(0, 200)}...</p>
+              <p><a href="${item.link}" target="_blank">View →</a></p>
+            </div>
+            <img src="${imgSrc}" alt="Post image" class="project-img">
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(err => console.error('Error fetching RSS feed:', err));
+  </script>
+</body>
+</html>
