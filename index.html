@@ -5,26 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>slayervictor | Home</title>
   <link rel="stylesheet" href="themes/styles.css">
-<style>header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-}</style>
+  <style>
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 4rem; /* increased spacing between icons */
+      margin-top: 1.5rem; /* a bit more distance from the nav */
+      justify-content: center;
+    }
+
+    .social-icons a img {
+      width: 24px;  /* smaller size */
+      height: 24px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.15);
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>slayervictor</h1>
-    <p class="subtitle">Software & Indie Game Developer </p>
+    <p class="subtitle">Software & Indie Game Developer</p>
     <nav>
       <a href="projects.html">Projects</a>
       <a href="blogposts.html">Blog Posts</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
+
+    <div class="social-icons">
+      <a href="contact.html" target="_blank" aria-label="Itch.io">
+        <img src="icons/email.svg" alt="Itch.io">
+      </a>
+      <a href="https://slayervictor.itch.io" target="_blank" aria-label="Itch.io">
+        <img src="icons/itchio-textless-black.svg" alt="Itch.io">
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+        <img src="icons/x-logo-black.png" alt="Twitter">
+      </a>
+      <a href="https://github.com/slayervictor" target="_blank" aria-label="GitHub">
+        <img src="icons/github-mark.svg" alt="GitHub">
+      </a>
+      <a href="http://discordapp.com/users/164025184473448449" target="_blank" aria-label="GitHub">
+        <img src="icons/discord.svg" alt="GitHub">
+      </a>
+      <a href="https://www.roblox.com/users/28224436/profile" target="_blank" aria-label="YouTube">
+        <img src="icons/icons8-roblox-logo-500.svg" alt="YouTube">
+      </a>
+    </div>
   </header>
 </body>
 </html>
