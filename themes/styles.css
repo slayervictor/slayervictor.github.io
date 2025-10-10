@@ -131,6 +131,15 @@ section h2 {
     border-radius: 8px;
     object-fit: cover;
 }
+.roblox-card-stats {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.roblox-card-stats p {
+  margin: 0.2rem 0;
+}
+
 
 /* Tags */
 .tags {
