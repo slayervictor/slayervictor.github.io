@@ -162,44 +162,92 @@ footer {
 }
 
 #TechStack {
-  margin-bottom: 2rem;
-  padding: 1rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 #TechStack h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
   text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+#TechStack h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff0000;
+  margin: 0.5rem auto 1rem;
+  border-radius: 2px;
+}
+
+#TechStack .tech-desc {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stack-section {
+  margin-bottom: 2rem;
+}
+
+.stack-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #222;
+  position: relative;
+}
+
+.stack-section h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ff0000;
+  margin-top: 0.4rem;
+  border-radius: 2px;
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   gap: 1rem;
   justify-items: center;
-  align-items: center;
 }
 
 .tech-item {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 0.8rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tech-item img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
   margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.1));
 }
 
 .tech-item span {
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 600;
+  color: #333;
 }
 
 .tech-item:hover {
-  transform: scale(1.1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background: #fff;
 }
