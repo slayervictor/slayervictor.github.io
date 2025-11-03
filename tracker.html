@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>slayervictor | Projects</title>
+  <link rel="stylesheet" href="themes/styles.css">
+  <style>
+    /* ✨ Roblox Stats Section - Matching site look */
+    #RobloxStats {
+      background: #FF0000;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin: 3rem auto;
+      border-radius: 16px;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    #RobloxStats:hover {
+      background: #aabad4;
+    }
+
+    #RobloxStats h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+
+    .roblox-stat-line {
+      font-size: 1.2rem;
+      margin: 0.4rem 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .roblox-stat-line.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="blogposts.html">Blog Posts</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✨ Roblox Stats Section -->
+  <section id="RobloxStats">
+    <h2>Live Game Stats</h2>
+    <p id="robloxVisits" class="roblox-stat-line">Total Plays: Loading...</p>
+    <p id="robloxPlaying" class="roblox-stat-line">Currently Playing: Loading...</p>
+  </section>
+
+
+  <!-- add more project cards -->
+  </div>
+  </section>
+
+  <footer>
+    <p>© 2025 slayervictor.</p>
+  </footer>
+
+  <!-- 📜 Roblox Stats Script -->
+  <script>
+    // 👇 Add all your Universe IDs here
+    const universeIds = [8779348390]; // Example array
+    const proxy = 'https://corsproxy.io/?';
+
+    async function fetchRobloxStats() {
+      try {
+        let totalVisits = 1978; // 👈 Your base number
+        let totalPlaying = 0;
+
+        if (universeIds.length > 0) {
+          const url = `https://games.roblox.com/v1/games?universeIds=${universeIds.join(',')}`;
+          const res = await fetch(proxy + encodeURIComponent(url));
+          if (!res.ok) throw new Error('Failed to fetch Roblox data');
+
+          const data = await res.json();
+
+          for (const game of data.data) {
+            totalVisits += game.visits;
+            totalPlaying += game.playing;
+          }
+        }
+
+        // 👇 Update DOM regardless of array length
+        const visitsElem = document.getElementById('robloxVisits');
+        const playingElem = document.getElementById('robloxPlaying');
+
+        visitsElem.textContent = `Total Plays: ${totalVisits.toLocaleString()}`;
+        playingElem.textContent = `Currently Playing: ${totalPlaying.toLocaleString()}`;
+
+        visitsElem.classList.add('show');
+        playingElem.classList.add('show');
+      } catch (err) {
+        console.error(err);
+        document.getElementById('robloxVisits').textContent = 'Total Plays: Error';
+        document.getElementById('robloxPlaying').textContent = 'Currently Playing: Error';
+      }
+    }
+
+    fetchRobloxStats();
+    setInterval(fetchRobloxStats, 10000); // Refresh every 10 seconds
+  </script>
+
+</body>
+
+</html>
